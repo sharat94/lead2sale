@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  color_code: MyString
+  interest_level: 1
+  actions: 
+
+two:
+  name: MyString
+  description: MyText
+  color_code: MyString
+  interest_level: 1
+  actions: 

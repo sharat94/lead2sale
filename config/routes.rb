@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :stages
+  resources :tasks
   resources :customers
   resources :prospects
   devise_for :users

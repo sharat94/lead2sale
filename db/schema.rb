@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170615122453) do
+ActiveRecord::Schema.define(version: 20170625170430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "customers", force: :cascade do |t|
     t.string   "full_name"
@@ -35,6 +36,32 @@ ActiveRecord::Schema.define(version: 20170615122453) do
     t.integer  "managed_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stages", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "color_code"
+    t.integer  "interest_level"
+    t.hstore   "actions"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "task_number"
+    t.datetime "event_datetime"
+    t.datetime "completed_at"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

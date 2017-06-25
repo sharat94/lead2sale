@@ -1,0 +1,37 @@
+<%= form_for(@stage) do |f| %>
+  <% if @stage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stage.errors.count, "error") %> prohibited this stage from being saved:</h2>
+
+      <ul>
+      <% @stage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :color_code %><br>
+    <%= f.text_field :color_code %>
+  </div>
+  <div class="field">
+    <%= f.label :interest_level %><br>
+    <%= f.number_field :interest_level %>
+  </div>
+  <div class="field">
+    <%= f.label :actions %><br>
+    <%= f.text_field :actions %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

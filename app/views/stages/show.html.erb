@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stage.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @stage.description %>
+</p>
+
+<p>
+  <strong>Color code:</strong>
+  <%= @stage.color_code %>
+</p>
+
+<p>
+  <strong>Interest level:</strong>
+  <%= @stage.interest_level %>
+</p>
+
+<p>
+  <strong>Actions:</strong>
+  <%= @stage.actions %>
+</p>
+
+<%= link_to 'Edit', edit_stage_path(@stage) %> |
+<%= link_to 'Back', stages_path %>
