@@ -7,6 +7,8 @@ include Sidekiq::Worker
   def perform(work_id)
   	a=Prospect.find(work_id)
   	b=eval(a.stage.actions["task"])
+    puts a.full_name
+    puts b
   	if b["mandatory"] == "true"
   		if b["name"] == "Call Customer"
   			a.user.tasks.create(title: "Call #{a.full_name} Tomorrow at #{Time.now.hour}:#{Time.now.min}", content: "Please call {a.full_name} tomorrow at #{Time.now.hour}:#{Time.now.min} on #{a.phone}")

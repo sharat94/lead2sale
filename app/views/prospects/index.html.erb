@@ -22,8 +22,8 @@
         <td><%= prospect.email %></td>
         <td><%= prospect.phone %></td>
         <td><%= prospect.location %></td>
-        <td><%= prospect.stage_id %></td>
-        <td><%= prospect.managed_by %></td>
+        <td><%= prospect.interest_level %></td>
+        <td><%= prospect.stage.try(:name) %></td>
         <td><%= link_to 'Show', prospect %></td>
         <td><%= link_to 'Edit', edit_prospect_path(prospect) %></td>
         <td><%= link_to 'Destroy', prospect, method: :delete, data: { confirm: 'Are you sure?' } %></td>

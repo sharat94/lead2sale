@@ -28,12 +28,15 @@
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :stage_id %><br>
-    <%= f.number_field :stage_id %>
+    <%= f.label :interest_level %><br>
+    <%= f.number_field :interest_level %>
   </div>
   <div class="field">
-    <%= f.label :managed_by %><br>
-    <%= f.number_field :managed_by %>
+    <%= f.label :stage_id %><br>
+    <%= f.collection_select(:stage_id, Stage.all, :id, :name, prompt: true) %>
+  </div>
+  <div class="field">
+   <%= f.hidden_field :managed_by, :value => current_user.id %>
   </div>
   <div class="actions">
     <%= f.submit %>

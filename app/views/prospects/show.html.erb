@@ -21,14 +21,17 @@
 </p>
 
 <p>
-  <strong>Stage:</strong>
-  <%= @prospect.stage_id %>
+  <strong>Interest Level</strong>
+  <%= @prospect.interest_level %>
 </p>
 
+
 <p>
-  <strong>Managed by:</strong>
-  <%= @prospect.managed_by %>
+  <strong>Stage:</strong>
+  <%= @prospect.stage.name %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_prospect_path(@prospect) %> |
 <%= link_to 'Back', prospects_path %>

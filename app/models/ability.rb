@@ -8,6 +8,7 @@ class Ability
         can :manage, [Customer]
         can :manage, [User]
         can :manage, [Stage]
+        can :manage, [Task]
 
     elsif user.role.name == "Sales Associate"
         can :create, Prospect, :user_id => user.id 

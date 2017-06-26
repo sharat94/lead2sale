@@ -8,11 +8,7 @@ def send_email(p_id)
      elsif b["template"] == "Product Demo"
      	@body = "Hi there! This is a mail to schedule a product demo"
      elsif b["template"] == "ProductProposal & Quotation"
-     	@body = "Hi there! Please click one of the responses for the proposal
-
-     				#{link_to "Accept", }
-     				#{link_to "Decline", }
-     				#{link_to "Negotiate", }"
+     	@body = "Hi there! Please click one of the responses for the proposal"
      elsif b["template"] == "Customer Negotiation"
      		@body = "Hi there! This is a customer negotiation. Please be available tomorrow."
      elsif b["template"] == "Welcome onboard"

@@ -1,6 +1,7 @@
 class ProspectsController < ApplicationController
   before_action :set_prospect, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  load_and_authorize_resource
   # GET /prospects
   # GET /prospects.json
   def index
