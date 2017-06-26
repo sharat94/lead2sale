@@ -18,6 +18,8 @@ include Sidekiq::Worker
   			 a.user.tasks.create(title: "Follow up with #{a.full_name} on #{Date.tomorrow} at #{Time.now.hour}:#{Time.now.min}" , content: "Please engage with #{a.full_name} on #{Date.tomorrow} at #{Time.now.hour}:#{Time.now.min} to negotiate price and persuade to purchase.")
   	    elsif b["name"] == "Customer Engagement"
   	    	a.user.tasks.create(title: "Check up with #{a.full_name} on #{}{Date.tomorrow} at #{Time.now.hour}:#{Time.now.min}", content: "Please engage with #{a.full_name} on #{Date.today} at #{Time.now.hour}:#{Time.now.min} to get feedback.")
+ 			Customer.create(full_name: "#{a.full_name}", email: "#{a.email}", phone: "#{a.phone}", location: "#{a.location}", managed_by: "#{a.managed_by}")
+ 		
  		elsif b["name"] == "Customer finalisation"
  			a.user.tasks.create(title: "Follow up with #{a.full_name} on  #{Date.tomorrow} at #{Time.now.hour}:#{Time.now.min}", content: "Please engage with #{a.full_name} on #{Date.today} at #{Time.now.hour}:#{Time.now.min} to finalize purchase.")
  		elsif b["name"] == "Follow Up"
