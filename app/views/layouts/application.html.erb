@@ -1,15 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Leads</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>LMS</title>
+ 
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
-<%= yield %>
+
+
+<nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+       <% if user_signed_in? %>
+       <% if current_user.role.name=="Sales Manager" %>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-primary">
+
+        <a class="navbar-brand" href="#">
+           SALES MANAGER
+
+        </a>
+
+        <% elsif current_user.role=="Sales Associate" %>
+        <div class="collapse navbar-collapse navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-primary">
+
+        <a class="navbar-brand" href="#">
+           SALES ASSOCIATE
+
+          
+        </a>
+        <%end%>
+        <%end%>
+
+
+
+        <ul class="nav navbar-nav navbar-utility">
+        <li class="dropdown">
+
+
+      </li>
+
+          <li class="dropdown">
+              <% if user_signed_in? %>
+                  <li><%= link_to "Hello, #{current_user.full_name}", "#" %></li>
+                
+             </li>
+  
+  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+
+
+  <%end%>
+            </ul>
+          </li>
+
+
+    </ul>
+  </div>
+
+      </div>
+    </nav>
+
+
+<% flash.each do |key, value| %>
+    <div id="flash">
+      <%= value %>
+    </div>
+<% end %>
+
+  <%= yield %>
+
 
 </body>
 </html>

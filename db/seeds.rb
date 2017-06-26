@@ -25,3 +25,7 @@ Stage.create("name"=>"Lost", "description"=>"This stage is assigned if a Prospec
 Stage.create("name"=>"Non-Responsive", "description"=>"This stage is assigned when the sales rep is not able to connect with a Prospect","color_code"=>"#FF5733","interest_level"=>3, "actions"=> { "email"=> { "send"=> "false", "datetime"=>"#{DateTime.now}","template"=>"none"}, "task"=> {"mandatory"=>"true", "name"=>"Follow Up"}})
 
 
+Role.create("name"=>"Sales Manager")
+Role.create("name"=>"Sales Associate")
+
+User.create("email"=>"salesmanager@gmail.com", "full_name"=>"Aniket", "phone"=>"9037534744", "role_id"=>"1", "password"=>"ani123")

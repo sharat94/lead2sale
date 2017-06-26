@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
         format.html { redirect_to root_path, notice: exception.message }
         format.js   { head :forbidden, content_type: 'text/html' }
       end
+  end
  protected
 
   def configure_permitted_parameters

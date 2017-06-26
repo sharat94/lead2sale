@@ -1,10 +1,10 @@
 class ProspectsController < ApplicationController
   before_action :set_prospect, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /prospects
   # GET /prospects.json
   def index
-    @prospects = Prospect.all
+    @prospects = current_user.prospects
   end
 
   # GET /prospects/1
