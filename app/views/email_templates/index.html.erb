@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Email Templates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @email_templates.each do |email_template| %>
+      <tr>
+        <td><%= email_template.subject %></td>
+        <td><%= email_template.content %></td>
+        <td><%= link_to 'Show', email_template %></td>
+        <td><%= link_to 'Edit', edit_email_template_path(email_template) %></td>
+        <td><%= link_to 'Destroy', email_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Email template', new_email_template_path %>

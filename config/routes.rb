@@ -1,4 +1,7 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
+  resources :email_templates
+  mount Sidekiq::Web, at: '/sidekiq'
   resources :stages
   resources :tasks
   resources :customers
