@@ -23,3 +23,5 @@ Stage.create("name"=>"Delayed", "description"=>"This stage is assigned if a Pros
 Stage.create("name"=>"Lost", "description"=>"This stage is assigned if a Prospect purchases from a competitor or decides theyare no longer interested in your product.","color_code"=>"#FF5733","interest_level"=>0, "actions"=> { "email"=> { "send"=> "true", "datetime"=>"#{DateTime.now}","template"=>"Thank You"}, "task"=> {"mandatory"=>"false", "name"=>"none"}})
 
 Stage.create("name"=>"Non-Responsive", "description"=>"This stage is assigned when the sales rep is not able to connect with a Prospect","color_code"=>"#FF5733","interest_level"=>3, "actions"=> { "email"=> { "send"=> "false", "datetime"=>"#{DateTime.now}","template"=>"none"}, "task"=> {"mandatory"=>"true", "name"=>"Follow Up"}})
+
+

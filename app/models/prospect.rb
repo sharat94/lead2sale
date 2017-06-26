@@ -5,5 +5,7 @@ class Prospect < ActiveRecord::Base
 
 	def background_jobs
 		StagesWorker.perform_async(self.id)
+		mail = Notification.send_email(self.id)
+		mail.deliver_later!
 	end
 end
