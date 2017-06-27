@@ -1,7 +1,9 @@
 # Lead2Sale
+
 Lead2Sale is a Lead Management System which helps automate customer acquisition process.Customer Acquisition follows a sales pipeline which defines a typical step by step process that sales reps go through to convert a prospect into a paying customer.A sales stage is created for each step in the sales process.The sales rep is responsible for moving the stages as the prospect's interest level changes.The number of sales stages will vary based on the length of your sales cycle and the number of interactions needed to close a deal.
 
-Users & Roles
+#Users & Roles
+
 Users should be able to operate this system only via a email/password authentication system.
 Users can only be invited into the application. Registrations should not be allowed.
 A User has a Full Name, Email, Password, Phone(10 digit) and role_id.
@@ -21,7 +23,8 @@ Prospect belongs_to Stage. Stages has_many Prospects. Prospect also belongs to U
 foreign key of managed_by.
 Customer has all attributes of a Prospect except stage_id.
 
-Stages
+#Stages
+
 There are 9 stages to a sales cycle. The 9 stages are as below:
 1. New Opportunity - This stage is assigned as default when a prospect is created.
 2. Qualifying - This stage is assigned when the sales rep begins contacting the prospect to
@@ -49,7 +52,8 @@ created.’, color_code: ‘#FF5733’, interest_level: 8, actions: { email: { s
 Customer’} }}
 
 
-Tasks
+#Tasks
+
 Tasks are jobs that are to be assigned to and be completed by a user.
 User has_many Tasks & A Task belong_to a User.
 Task has title, content, task_number, event_datetime & completed_at.
