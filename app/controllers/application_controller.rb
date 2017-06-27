@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name,:phone,:role_id])
+    devise_parameter_sanitizer.permit(:accept_invitation, keys: [:full_name,:phone,:role_id])
+
   end
 
 end
