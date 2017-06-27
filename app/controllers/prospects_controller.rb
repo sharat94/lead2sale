@@ -5,7 +5,7 @@ class ProspectsController < ApplicationController
   # GET /prospects
   # GET /prospects.json
   def index
-    @prospects = current_user.prospects
+    @prospects = (current_user.role.name=="Sales Manager")? (Prospect.all):(current_user.prospects)
   end
 
   # GET /prospects/1
@@ -70,6 +70,6 @@ class ProspectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prospect_params
-      params.require(:prospect).permit(:full_name, :email, :phone, :location, :stage_id, :managed_by)
+      params.require(:prospect).permit(:full_name, :email, :phone, :location, :stage_id, :managed_by, :interest_level)
     end
 end

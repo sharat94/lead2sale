@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(version: 20170626105834) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "email_templates", force: :cascade do |t|
+    t.string   "subject"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "prospects", force: :cascade do |t|
     t.string   "full_name"
     t.string   "email"
