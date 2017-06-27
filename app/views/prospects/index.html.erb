@@ -12,6 +12,9 @@
       <th>Location</th>
       <th>Interest Level</th>
       <th>Stage</th>
+      <% if current_user.role.name=="Sales Manager" %>
+      <th>Managed By</th>
+      <% end %>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +29,9 @@
         <td><%= prospect.location %></td>
         <td><%= prospect.interest_level %></td>
         <td><%= prospect.stage.try(:name) %></td>
+          <% if current_user.role.name=="Sales Manager" %>
+      <td><%= prospect.user.full_name %></td>
+      <% end %>
         <td><%= link_to 'Show', prospect %></td>
         <td><%= link_to 'Edit', edit_prospect_path(prospect) %></td>
         <td><%= link_to 'Destroy', prospect, method: :delete, data: { confirm: 'Are you sure?' } %></td>

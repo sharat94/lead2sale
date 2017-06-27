@@ -10,7 +10,9 @@
       <th>Email</th>
       <th>Phone</th>
       <th>Location</th>
-      <th>Managed by</th>
+      <% if current_user.role.name=="Sales Manager" %>
+      <th>Managed By</th>
+      <% end %>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,7 +24,9 @@
         <td><%= customer.email %></td>
         <td><%= customer.phone %></td>
         <td><%= customer.location %></td>
-        <td><%= customer.managed_by %></td>
+        <% if current_user.role.name=="Sales Manager" %>
+      <td><%= prospect.user.full_name %></td>
+      <% end %>
         <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
         <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

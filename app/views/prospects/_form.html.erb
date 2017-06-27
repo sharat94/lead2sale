@@ -13,23 +13,23 @@
 
   <div class="form-group">
     <%= f.label :full_name %><br>
-    <%= f.text_field :full_name %>
+    <%= f.text_field :full_name ,:required => true%>
   </div>
   <div class="form-group">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email ,:required => true%>
   </div>
   <div class="form-group">
     <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone ,:required => true %>
   </div>
   <div class="form-group">
     <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.text_field :location ,:required => true%>
   </div>
  <div class="form-group">
     <%= f.label :interest_level %><br>
-    <%= f.number_field :interest_level %>
+    <%= f.number_field :interest_level ,:required => true%>
   </div>
   <div class="form-group">
     <%= f.label :stage_id %><br>
