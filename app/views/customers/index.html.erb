@@ -25,7 +25,7 @@
         <td><%= customer.phone %></td>
         <td><%= customer.location %></td>
         <% if current_user.role.name=="Sales Manager" %>
-      <td><%= prospect.user.full_name %></td>
+      <td><%= customer.user.full_name %></td>
       <% end %>
         <td><%= link_to 'Show', customer %></td>
         <td><%= link_to 'Edit', edit_customer_path(customer) %></td>

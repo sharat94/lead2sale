@@ -28,5 +28,5 @@ Stage.create("name"=>"Non-Responsive", "description"=>"This stage is assigned wh
 Role.create("name"=>"Sales Manager")
 Role.create("name"=>"Sales Associate")
 
-User.create("email"=>"salesmanager@gmail.com", "full_name"=>"Aniket", "phone"=>"9037534744", "role_id"=>"#{Role.where("name=?","Sales Manager").last.id}", "password"=>"ani123")
-User.create("email"=>"salesassociate@gmail.com", "full_name"=>"Aniket", "phone"=>"9037534744", "role_id"=>"#{Role.where("name=?","Sales Associate").last.id}", "password"=>"ani123")
+User.create("email"=>"salesmanager@gmail.com", "full_name"=>"Aniket", "phone"=>"9037534733", "role_id"=>"#{Role.where("name=?","Sales Manager").last.id}", "password"=>"ani123")
+User.create("email"=>"salesassociate@gmail.com", "full_name"=>"Aniket", "phone"=>"9037534733", "role_id"=>"#{Role.where("name=?","Sales Associate").last.id}", "password"=>"ani123")

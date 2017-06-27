@@ -26,7 +26,6 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
-    @task.task_number = (Task.last.try(:task_number) + 1)
     @task.user_id = current_user.id
     respond_to do |format|
       if @task.save
