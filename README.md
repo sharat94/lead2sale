@@ -135,3 +135,14 @@ Title: Follow up with {Prospect_Name} on
 {Event_Date} at {Event_Time}, Content: Please
 engage with {Prospect_Name} on {Event_Date
 + 30 DAYS} at {Event_Time + 30 DAYS}.
+
+# Usage
+
+1. Clone the repo.
+2. perform bundle and rake db:setup
+3. rails s
+4. bundle exec sidekiq -q high,5 default
+
+#Credentials for login
+
+Please check seed.rb file
