@@ -31,7 +31,7 @@
 
         </a>
 
-        <% elsif current_user.role=="Sales Associate" %>
+        <% elsif current_user.role.name=="Sales Associate" %>
         <div class="collapse navbar-collapse navbar-collapse-1">
 
         <ul class="nav navbar-nav navbar-primary">
@@ -71,9 +71,29 @@
 
       </div>
     </nav>
+     <% if user_signed_in? %>
+    <div class="col-md-3">
+<div class="nav-pf-vertical nav-pf-vertical-with-sub-menus">
+  <ul class="list-group">
+    <li class="list-group-item">
+        <%= link_to "Prospects", prospects_path %>
+    </li>
+   
+    <% if current_user.role.name=="Sales Manager" %>
+    <li class="list-group-item">
+        <%= link_to "Customers", customers_path %>
+    </li>
+    <% end %>
+    <li class="list-group-item">
+        <%= link_to "Tasks", tasks_path %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+</div>
 
-
-
+<div class="container">
+ <div class="col-md-9">
   <% if notice %>
     <div class="alert alert-success" role="alert"><%= notice %></div>
     <% end %>
@@ -83,7 +103,7 @@
     <% end %>
 
   <%= yield %>
-
-
+</div>
+</div>
 </body>
 </html>

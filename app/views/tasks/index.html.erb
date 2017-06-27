@@ -2,7 +2,8 @@
 
 <h1>Listing Tasks</h1>
 
-<table>
+<table class="table table-striped" id="myTable">
+
   <thead>
     <tr>
       <th>Title</th>
@@ -33,3 +34,8 @@
 <br>
 
 <%= link_to 'New Task', new_task_path %>
+<script>
+$(document).ready(function(){
+    $('#myTable').DataTable();
+});
+</script>

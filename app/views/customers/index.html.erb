@@ -2,7 +2,8 @@
 
 <h1>Listing Customers</h1>
 
-<table>
+<table class="table table-striped" id="myTable">
+
   <thead>
     <tr>
       <th>Full name</th>
@@ -32,4 +33,8 @@
 
 <br>
 
-<%= link_to 'New Customer', new_customer_path %>
+<script>
+$(document).ready(function(){
+    $('#myTable').DataTable();
+});
+</script>

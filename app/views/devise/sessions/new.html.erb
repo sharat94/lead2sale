@@ -7,21 +7,21 @@
       <h1>LEAD MANAGEMENT SOFTWARE</h1>
       </div><!--/#brand-->
     </div><!--/.col-*-->
-    <div class="col-sm-7 col-md-6 col-lg-5 login">
+    <div class="col-sm-9 col-md-9 col-lg-9 login">
 
 
      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-group">
           <label for="inputUsername" class="col-sm-2 col-md-2 control-label">Username</label>
-          <div class="col-sm-10 col-md-10">
-
+          <div class="col-sm-7 col-md-7">
+          
            <%= f.text_field :email, class: "form-control", autofocus: true %>
           </div>
         </div>
 <p><br></p>
         <div class="form-group">
-          <label for="inputPassword" class="col-sm-2 col-md-2 control-label">Password</label>
-          <div class="col-sm-10 col-md-10">
+          <label for="inputPassword" class="col-sm-2 col-md-2 control-label ">Password</label>
+          <div class="col-sm-7 col-md-7">
             
               <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
           </div>

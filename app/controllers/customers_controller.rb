@@ -5,7 +5,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
-    @customers = current_user.customers
+    @customers = (current_user.role.name=="Sales Manager")? (Customer.all):(current_user.customers)
   end
 
   # GET /customers/1

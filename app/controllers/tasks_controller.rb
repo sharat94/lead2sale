@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.tasks
+    @tasks = (current_user.role.name=="Sales Manager")? (Task.all):(current_user.tasks)
   end
 
   # GET /tasks/1
@@ -27,6 +27,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.task_number = (Task.last.try(:task_number) + 1)
+    @task.user_id = current_user.id
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }

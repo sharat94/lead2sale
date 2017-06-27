@@ -11,9 +11,9 @@ class Ability
         can :manage, [Task]
 
     elsif user.role.name == "Sales Associate"
-        can :create, Prospect, :user_id => user.id 
-        can :read, Prospect, :user_id => user.id 
-        can :update, Prospect, :user_id => user.id 
+        can :create, Prospect, :managed_by => user.id 
+        can :read, Prospect, :managed_by => user.id 
+        can :update, Prospect, :managed_by => user.id 
     end
     # Define abilities for the passed in user here. For example:
     #
