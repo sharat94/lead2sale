@@ -28,7 +28,7 @@
 
         <a class="navbar-brand" href="#">
            SALES MANAGER
-           
+
         </a>
 
         <% elsif current_user.role.name=="Sales Associate" %>
@@ -82,6 +82,9 @@
     <% if current_user.role.name=="Sales Manager" %>
     <li class="list-group-item">
         <%= link_to "Customers", customers_path %>
+    </li>
+    <li class="list-group-item">
+        <%= link_to "Invite User", new_user_invitation_path %>
     </li>
     <% end %>
     <li class="list-group-item">

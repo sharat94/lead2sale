@@ -83,6 +83,9 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-bootstrap-views (0.0.11)
+    devise_invitable (1.7.2)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
     erubis (2.7.0)
     et-orbi (1.0.5)
       tzinfo
@@ -200,8 +203,9 @@ DEPENDENCIES
   byebug
   cancancan (~> 1.10)
   coffee-rails (~> 4.1.0)
-  devise
+  devise (~> 4.2)
   devise-bootstrap-views
+  devise_invitable (~> 1.7.0)
   jbuilder (~> 2.0)
   jquery-rails
   patternfly-sass (~> 3.10.0)
