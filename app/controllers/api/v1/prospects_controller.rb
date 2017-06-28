@@ -3,7 +3,7 @@ module Api
 		class ProspectsController < ApplicationController
 			respond_to :json
 			
-			def show
+			def index
 				pro=Prospect.find(params[:id])
 				pro.stage_id=params[:stage_id]
 				success= pro.save

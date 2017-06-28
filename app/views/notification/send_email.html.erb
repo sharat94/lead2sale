@@ -7,11 +7,11 @@
    <%= "#{@body}" %><br/>
   
    <% if @b["template"] == "ProductProposal & Quotation" %>
-   <%= link_to 'Accept', 'http://localhost:3000/api/v1/prospects/#{@prospect.id}?stage_id=6' %> 
+   <%= link_to 'Accept', api_v1_prospects_url(:id => @prospect.id, :stage_id => '6') %> 
           </br>
-    <%= link_to 'Decline', 'http://localhost:3000/api/v1/prospects/#{@prospect.id}?stage_id=8' %> 
+    <%= link_to 'Decline', api_v1_prospects_url(:id => @prospect.id, :stage_id => '8') %> 
           </br>
-          <%= link_to 'Negotiate', 'http://localhost:3000/api/v1/prospects/#{@prospect.id}?stage_id=5' %> 
+          <%= link_to 'Negotiate', api_v1_prospects_url(:id => @prospect.id, :stage_id => '5') %> 
           </br>
      <% end %>      
   Regards,<br/>
