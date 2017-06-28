@@ -6,7 +6,14 @@
 <p>
    <%= "#{@body}" %><br/>
   
-
+   <% if @b["template"] == "ProductProposal & Quotation" %>
+   <%= link_to 'Accept', 'http://localhost:3000/api/v1/prospects/#{@prospect.id}?stage_id=6' %> 
+          </br>
+    <%= link_to 'Decline', 'http://localhost:3000/api/v1/prospects/#{@prospect.id}?stage_id=8' %> 
+          </br>
+          <%= link_to 'Negotiate', 'http://localhost:3000/api/v1/prospects/#{@prospect.id}?stage_id=5' %> 
+          </br>
+     <% end %>      
   Regards,<br/>
   Support Team <br/>
 </p>
