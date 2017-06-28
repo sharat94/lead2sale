@@ -14,6 +14,10 @@ class Ability
         can :create, Prospect, :managed_by => user.id 
         can :read, Prospect, :managed_by => user.id 
         can :update, Prospect, :managed_by => user.id 
+        can :create, Task, :user_id => user.id 
+        can :read, Task, :user_id => user.id 
+        can :update, Task, :user_id => user.id
+        
     end
     # Define abilities for the passed in user here. For example:
     #

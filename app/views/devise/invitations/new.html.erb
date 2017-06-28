@@ -1,3 +1,4 @@
+<% if can? :manage, User %>
 <h2><%= t "devise.invitations.new.header" %></h2>
 
 <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
@@ -12,4 +13,7 @@
   </div>
   
   <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
+<% end %>
+<% else %>
+<h2>You are not allowed to access this page</h2>
 <% end %>
