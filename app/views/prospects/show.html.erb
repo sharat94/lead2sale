@@ -31,7 +31,7 @@
   <%= @prospect.stage.name %>
 </p>
 
-
-
+<%= image_tag ("http://image.maps.cit.api.here.com/mia/1.6/mapview?app_id=hmssS2har1wNpfIruxAi&app_code=4UP-uMLiNYaGAKcXOw1XHQ&ci=#{@prospect.location}&h=300&w=600&z=13&f=0&style=alps"), :class =>"map", :width =>"500" %>
+</br></br>
 <%= link_to 'Edit', edit_prospect_path(@prospect) %> |
 <%= link_to 'Back', prospects_path %>

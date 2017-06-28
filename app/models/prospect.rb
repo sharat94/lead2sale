@@ -1,4 +1,6 @@
 class Prospect < ActiveRecord::Base
+	geocoded_by :location
+	after_validation :geocode 
 	belongs_to :stage
 	belongs_to :user, :class_name => "User", foreign_key: :managed_by
 	after_commit :background_jobs
